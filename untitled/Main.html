@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <title>Help Desk Dev</title>
+    <script>
+        $( document ).ready(function() {
+            $('2').submit(function() {
+                console.log("hello"); // etc.
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+<form action="javascript: handleClick()">
+    <textarea id = "2" style="width: 30%; height: 100px" class="form-control" rows="3">
+
+    </textarea>
+    <p>
+        <input class="btn btn-default" type="submit" value="Отправить" >
+        <select id = "1" class="form-control">
+            <option>Причина 1</option>
+            <option>Причина 2</option>
+            <option>Причина 3</option>
+            <option>Причина 4</option>
+            <option>Причина 5</option>
+        </select>
+    </p>
+</form>
+
+<script>
+        var selected = document.getElementById("1");
+        console.log(selected.options[selected.selectedIndex]);
+        var input = document.getElementById("2");
+        //console.log(handleClick().toString());
+
+        function handleClick()
+        {
+            //alert("hello");
+            console.log(input.innerText);
+            console.log(input.innerHTML);
+            var text = $("#2").val();
+            console.log(text);
+            console.log(selected.options[selected.selectedIndex]);
+            return selected.options[selected.selectedIndex];
+        }
+</script>
+
+</body>
+</html>
