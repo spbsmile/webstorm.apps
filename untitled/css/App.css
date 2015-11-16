@@ -1,0 +1,12 @@
+.input-class
+{
+    height:100px;
+}
+
+.input-class[placeholder]
+{
+    line-height:30px;
+    font-size:22px;
+}
+
+.div1 {display:inline-block;}

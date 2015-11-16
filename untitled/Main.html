@@ -2,52 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="App.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="bootstrap.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
     <title>Help Desk Dev</title>
-    <script>
-        $( document ).ready(function() {
-            $('2').submit(function() {
-                console.log("hello"); // etc.
-            });
-        });
-    </script>
-
 
 </head>
 <body>
 
-<form action="javascript: handleClick()">
-    <textarea id = "2" style="width: 30%; height: 100px" class="form-control" rows="3">
+        <form role="form" class="form-horizontal" style="width: 50%">
+            <label>Please fill the form</label>
+            <br><br>
 
-    </textarea>
-    <p>
-        <input class="btn btn-default" type="submit" value="Отправить" >
-        <select id = "1" class="form-control">
-            <option>Причина 1</option>
-            <option>Причина 2</option>
-            <option>Причина 3</option>
-            <option>Причина 4</option>
-            <option>Причина 5</option>
-        </select>
-    </p>
-</form>
+            <div class="form-group">
+                <label for="title" class="col-lg-3">Название</label>
+                <div class="col-lg-10 col-sm-10">
+                    <input type="text" class="form-control" id="title">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="category" class="col-lg-3">Выберите категорию</label>
+                <div class="col-lg-10 col-sm-10">
+                    <select id = category class="form-control">
+                        <option>Починка оборудования</option>
+                        <option>Починка ПО</option>
+                        <option data-icon="glyphicon-heart">Интернет</option>
+                        <option>Lync</option>
+                        <option>Документы</option>
+                        <option>Другое</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message" class="col-lg-3">Описание</label>
+                <div class="col-lg-10 col-sm-10">
+                    <textarea class="form-control" name="message" id="message" required="required"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="4" class="col-lg-3 col-sm-3"> Определите срочность:</label>
+                <div class="col-lg-7 col-sm-7">
+                    <select id = 4 class="form-control">
+                        <option>в течении дня</option>
+                        <option>в течении 1 часа</option>
+                        <option>в течении 2 часов</option>
+                        <option>в течении 4 часов</option>
+                    </select>
+                </div>
+            </div>
+
+        </form>
+        <input class="btn btn-default" type="submit" value="Отправить">
 
 <script>
         var selected = document.getElementById("1");
-        console.log(selected.options[selected.selectedIndex]);
         var input = document.getElementById("2");
-        //console.log(handleClick().toString());
 
         function handleClick()
         {
-            //alert("hello");
             console.log(input.innerText);
             console.log(input.innerHTML);
             var text = $("#2").val();
             console.log(text);
             console.log(selected.options[selected.selectedIndex]);
-            return selected.options[selected.selectedIndex];
         }
 </script>
 
